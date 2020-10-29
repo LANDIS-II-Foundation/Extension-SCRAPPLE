@@ -646,10 +646,10 @@ namespace Landis.Extension.Scrapple
             if (!ZipTest)
             {
                 double possibleIgnitions = Math.Pow(Math.E, (b0 + (b1 * fireWeatherIndex)));
-                numIgnitions = (int) Math.Round(possibleIgnitions, 0);
-                //int floorPossibleIginitions = (int)Math.Floor(possibleIgnitions);
-                //numIgnitions += floorPossibleIginitions;
-                //numIgnitions += (modelCore.GenerateUniform() <= (possibleIgnitions - (double)floorPossibleIginitions) ? 1 : 0);
+                //numIgnitions = (int) Math.Round(possibleIgnitions, 0);
+                int floorPossibleIginitions = (int)Math.Floor(possibleIgnitions);
+                numIgnitions += floorPossibleIginitions;
+                numIgnitions += (modelCore.GenerateUniform() <= (possibleIgnitions - (double)floorPossibleIginitions) ? 1 : 0);
             } else
             {
                 double binomb0 = 0.0;
